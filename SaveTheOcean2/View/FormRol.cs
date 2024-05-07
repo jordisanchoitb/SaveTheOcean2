@@ -57,7 +57,7 @@ namespace SaveTheOcean2
             {
                 NameProvider.SetError(txtBoxName, "El nom ha de tenir més de 3 caràcters");
                 e.Cancel = true;
-            } 
+            }
             else
             {
                 NameProvider.SetError(txtBoxName, "");

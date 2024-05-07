@@ -8,6 +8,9 @@ using System.Numerics;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using SaveTheOcean2.DTOs;
+using SaveTheOcean2.Persistence.Mapping;
+using SaveTheOcean2.Persistence.Utils;
 
 namespace SaveTheOcean2.View
 {
@@ -19,29 +22,27 @@ namespace SaveTheOcean2.View
         const string MsgXpDecrease = " La teva experiència s’ha reduït en -{0}XP.";
         const string MsgTreatmentExit = "El tractament aplicat ha reduït el GA fins al {0}%. Rescat èxit! {1}, de la espècie {2} ha estat reintroduït al medi natural.";
         const string MsgTreatmentNotExit = "El tractament aplicat ha reduït el GA fins al {0}%. L'exemplar {1}, de la espècie {2} requereix més atenció. Traslladant al CRAM.";
+        const string PathXML = @"..\..\..\fitxers\Datagame.xml";
         const int FORTUFIVE = 45, EIGHTING = 80, THIRTY = 30, FIFTY = 50, TWENTY = 20;
 
         private FormMenu formMenu;
-        private AAnimal animal;
+        private Animal animal;
         private Player player;
         private Rescued rescued;
-        private string superFamily;
         private int newGradeAfectation;
         public FormGame(FormMenu formMenu, string playername, string role)
         {
             InitializeComponent();
             this.formMenu = formMenu;
-            // Agafem un super família aleatòria a partir del mètode GetRandomSuperfamily
-            superFamily = MethodsUtilities.GetRandomSuperfamily();
 
             // Instanciem un animal a rescata de la super família obtinguda anteriorment
-            animal = MethodsUtilities.GetAnimalBySuperfamily(superFamily) ?? new SeaTurtle();
+            animal = MethodsUtilities.GetAnimal();
 
             // Instanciem un rescat amb la super família obtinguda anteriorment
             rescued = new Rescued(animal);
 
-            // Instanciem un jugador amb el nom i la experiència a partir del rol escollit
-            player = new Player(playername, role == "Tecnic" ? FORTUFIVE : EIGHTING);
+            // Instanciem un jugador amb el nom i la experiència a partir del rol escollit i el rol escollit
+            player = new Player(playername, role == "Tecnic" ? FORTUFIVE : EIGHTING, role);
 
             lbl_playerInfo.Text = $"{player}";
 
@@ -61,6 +62,7 @@ namespace SaveTheOcean2.View
             lbl_choose.Hide();
             butt_heal.Hide();
             butt_move.Hide();
+
             if (newGradeAfectation <= THIRTY)
             {
                 lbl_msgtreatment.Text = string.Format(MsgTreatmentExit, newGradeAfectation, rescued.Animal.Name, rescued.Animal.Specie);
@@ -68,6 +70,7 @@ namespace SaveTheOcean2.View
                 lbl_msgxp.Text = string.Format(MsgXpAugment, FIFTY);
                 lbl_msgxp.Show();
                 player.AddExperience(FIFTY);
+                player.AnimalRescued = true;
             }
             else
             {
@@ -76,7 +79,30 @@ namespace SaveTheOcean2.View
                 lbl_msgxp.Text = string.Format(MsgXpDecrease, TWENTY);
                 lbl_msgxp.Show();
                 player.RemoveExperience(TWENTY);
+                player.AnimalRescued = false;
             }
+
+            // Guardem la puntuació del jugador a l'arxiu XML
+            XMLHandler xmlHandler = new XMLHandler(PathXML);
+            try
+            {
+                xmlHandler.AddScore(player);
+            }
+            catch (Exception ex)
+            { }
+
+            // Guardem el rescat a la base de dades
+            RescuedBBDD rescuedbbdd = new RescuedBBDD(rescued.Number, rescued.Date, rescued.Superfamily, rescued.Animal.GradeAfectation, rescued.Location, player.Name, player.AnimalRescued);
+            try
+            {
+                RescuedBBDDDAO rescuedBBDDDAO = new RescuedBBDDDAO(NpgsqlUtils.OpenConnection());
+                rescuedBBDDDAO.AddRescuedBBDD(rescuedbbdd);
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Error al guardar el rescat a la base de dades", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+
             butt_gomenu.Show();
         }
 
@@ -90,6 +116,7 @@ namespace SaveTheOcean2.View
             lbl_choose.Hide();
             butt_heal.Hide();
             butt_move.Hide();
+
             if (newGradeAfectation <= THIRTY)
             {
                 lbl_msgtreatment.Text = string.Format(MsgTreatmentExit, newGradeAfectation, rescued.Animal.Name, rescued.Animal.Specie);
@@ -97,6 +124,7 @@ namespace SaveTheOcean2.View
                 lbl_msgxp.Text = string.Format(MsgXpAugment, FIFTY);
                 lbl_msgxp.Show();
                 player.AddExperience(FIFTY);
+                player.AnimalRescued = true;
             }
             else
             {
@@ -105,7 +133,30 @@ namespace SaveTheOcean2.View
                 lbl_msgxp.Text = string.Format(MsgXpDecrease, TWENTY);
                 lbl_msgxp.Show();
                 player.RemoveExperience(TWENTY);
+                player.AnimalRescued = false;
             }
+
+            // Guardem la puntuació del jugador a l'arxiu XML
+            XMLHandler xmlHandler = new XMLHandler(PathXML);
+            try
+            {
+                xmlHandler.AddScore(player);
+            }
+            catch (Exception ex)
+            { }
+
+            // Guardem el rescat a la base de dades
+            RescuedBBDD rescuedbbdd = new RescuedBBDD(rescued.Number, rescued.Date, rescued.Superfamily, rescued.Animal.GradeAfectation, rescued.Location, player.Name, player.AnimalRescued);
+            try
+            {
+                RescuedBBDDDAO rescuedBBDDDAO = new RescuedBBDDDAO(NpgsqlUtils.OpenConnection());
+                rescuedBBDDDAO.AddRescuedBBDD(rescuedbbdd);
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Error al guardar el rescat a la base de dades", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+
             butt_gomenu.Show();
         }
 

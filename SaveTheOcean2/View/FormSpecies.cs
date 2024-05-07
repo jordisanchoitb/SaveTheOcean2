@@ -7,22 +7,37 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using SaveTheOcean2.View;
 
 namespace SaveTheOcean2
 {
     public partial class FormSpecies : Form
     {
-        private FormMenu fromMenu;
+        private FormMenu formMenu;
         public FormSpecies(FormMenu fromMenu)
         {
             InitializeComponent();
-            this.fromMenu = fromMenu;
+            this.formMenu = fromMenu;
         }
 
         private void butt_back_Click(object sender, EventArgs e)
         {
-            this.fromMenu.Show();
+            this.formMenu.Show();
             this.Close();
+        }
+
+        private void butt_modify_Click(object sender, EventArgs e)
+        {
+            FormSpeciesModify formSpeciesModify = new FormSpeciesModify(this);
+            formSpeciesModify.Show();
+            this.Hide();
+        }
+
+        private void butt_add_Click(object sender, EventArgs e)
+        {
+            FormSpeciesAdd formSpeciesAdd = new FormSpeciesAdd(this);
+            formSpeciesAdd.Show();
+            this.Hide();
         }
     }
 }

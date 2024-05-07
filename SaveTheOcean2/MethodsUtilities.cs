@@ -1,4 +1,8 @@
 ﻿using System;
+using SaveTheOcean2.DTOs;
+using Npgsql;
+using SaveTheOcean2.Persistence.Utils;
+using SaveTheOcean2.Persistence.Mapping;
 
 namespace SaveTheOcean2
 {
@@ -36,6 +40,12 @@ namespace SaveTheOcean2
             Random random = new Random();
             return random.Next(min, max);
         }
+
+        /// <summary>
+        /// Retorna un booleà indicant si el text comença amb números
+        /// </summary>
+        /// <param name="text">text</param>
+        /// <returns>bool</returns>
         public static bool StartWithNumbers(string text)
         {
             return char.IsDigit(text[0]);
@@ -53,34 +63,37 @@ namespace SaveTheOcean2
             return random.Next(max);
         }
 
-
         /// <summary>
         /// Retorna el nom d'una superfamilia aleatoria
         /// </summary>
         /// <returns>string</returns>
-        public static string GetRandomSuperfamily()
+        private static string GetRandomSuperfamily()
         {
             string[] superfamily = { "Tortuga marina", "Au marina", "Cetaceo" };
             int index = RandomNum(superfamily.Length);
             return superfamily[index];
         }
 
-
         /// <summary>
-        /// Retorna l'instància d'Animal corresponent a la superfamilia passada per paràmetre
+        /// Retorna l'instància d'un Animal
         /// </summary>
-        /// <param name="superfamily">nom superfamilia ("Tortuga marina", "Au marina", "Cetaceo")</param>
-        /// <returns>AAnimal</returns>
-        public static AAnimal? GetAnimalBySuperfamily(string superfamily)
+        /// <returns>Animal</returns>
+        public static Animal? GetAnimal()
         {
+            AnimalDAO animalDAO = new AnimalDAO(NpgsqlUtils.OpenConnection());
+            List<Animal> animals = animalDAO.GetAllAnimals().ToList();
+            string superfamily = GetRandomSuperfamily();
             switch (superfamily)
             {
                 case "Tortuga marina":
-                    return new SeaTurtle();
+                    List<Animal> filteredSeaTurtle = animals.Where(a => a.Superfamily == "Tortuga marina").ToList();
+                    return filteredSeaTurtle[RandomNum(filteredSeaTurtle.Count)];
                 case "Au marina":
-                    return new SeaBird();
+                    List<Animal> filteredSeaBird = animals.Where(a => a.Superfamily == "Au marina").ToList();
+                    return filteredSeaBird[RandomNum(filteredSeaBird.Count)];
                 case "Cetaceo":
-                    return new Cetaceans();
+                    List<Animal> filteredCetaceans = animals.Where(a => a.Superfamily == "Cetáceo").ToList();
+                    return filteredCetaceans[RandomNum(filteredCetaceans.Count)];
                 default:
                     return null;
             }
@@ -98,7 +111,7 @@ namespace SaveTheOcean2
                 $"{MSG_INFOLINE}\n" +
                 $"{MSG_INFORES}\n" +
                 $"{MSG_INFOLINE}\n" +
-                $"{string.Format(MSG_INFORES_STATS, rescued.Number, rescued.Date, rescued.Superfamily, rescued.Animal.GradeAfectation, rescued.Location)}\n" +
+                $"{string.Format(MSG_INFORES_STATS, rescued.Number, rescued.Date.ToString("dd/MM/yyyy"), rescued.Superfamily, rescued.Animal.GradeAfectation, rescued.Location)}\n" +
                 $"{MSG_INFOLINE}";
 
         }

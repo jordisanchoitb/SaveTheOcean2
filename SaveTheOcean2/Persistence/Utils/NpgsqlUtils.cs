@@ -1,6 +1,6 @@
 ﻿using Microsoft.Extensions.Configuration;
 using Npgsql;
-//using SaveTheOcean2.DTOs;
+using SaveTheOcean2.DTOs;
 
 namespace SaveTheOcean2.Persistence.Utils
 {
@@ -16,20 +16,33 @@ namespace SaveTheOcean2.Persistence.Utils
             return config.GetConnectionString("MyPostgresConn");
         }
 
-        /*public static ComarcaDTO GetContact(NpgsqlDataReader reader)
+        public static Animal GetAnimal(NpgsqlDataReader reader)
         {
-            ComarcaDTO c = new ComarcaDTO
+            Animal a = new Animal
             {
-                Any = reader.GetInt32(0),
-                CodiComarca = reader.GetInt32(1),
-                NomComarca = reader.GetString(2),
-                Poblacio = reader.GetInt32(3),
-                DomesticXarxa = reader.GetDouble(4),
-                ActivitatsEconomiques = reader.GetDouble(5),
-                Total = reader.GetDouble(6),
-                ConsumDomesticPerCapita = reader.GetDouble(7)
+                Id = reader.GetInt32(0),
+                Name = reader.GetString(1),
+                Specie = reader.GetString(2),
+                Superfamily = reader.GetString(3),
+                WeightAprox = reader.GetDouble(4)
             };
-            return c;
-        }*/
+            return a;
+        }
+
+        public static RescuedBBDD GetRescuedBBDD(NpgsqlDataReader reader)
+        {
+            RescuedBBDD r = new RescuedBBDD
+            {
+                Id = reader.GetInt32(0),
+                IdRescured = reader.GetString(1),
+                Rescuedate = reader.GetDateTime(2),
+                Superfamily = reader.GetString(3),
+                GradeAfectation = reader.GetInt32(4),
+                Location = reader.GetString(5),
+                NamePlayer = reader.GetString(6),
+                IsRescued = reader.GetBoolean(7),
+            };
+            return r;
+        }
     }
 }

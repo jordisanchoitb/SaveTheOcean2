@@ -75,7 +75,7 @@
             // 
             lbl_FitxaRescat.AutoSize = true;
             lbl_FitxaRescat.Font = new Font("Segoe UI Semibold", 12.25F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            lbl_FitxaRescat.Location = new Point(496, 117);
+            lbl_FitxaRescat.Location = new Point(579, 117);
             lbl_FitxaRescat.Name = "lbl_FitxaRescat";
             lbl_FitxaRescat.Size = new Size(121, 23);
             lbl_FitxaRescat.TabIndex = 3;
@@ -85,7 +85,7 @@
             // 
             lbl_choose.AutoSize = true;
             lbl_choose.Font = new Font("Segoe UI Semibold", 14.25F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            lbl_choose.Location = new Point(226, 277);
+            lbl_choose.Location = new Point(260, 276);
             lbl_choose.Name = "lbl_choose";
             lbl_choose.Size = new Size(108, 25);
             lbl_choose.TabIndex = 4;
@@ -94,7 +94,7 @@
             // butt_heal
             // 
             butt_heal.Font = new Font("Segoe UI", 14.25F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            butt_heal.Location = new Point(341, 353);
+            butt_heal.Location = new Point(411, 352);
             butt_heal.Name = "butt_heal";
             butt_heal.Size = new Size(118, 65);
             butt_heal.TabIndex = 5;
@@ -105,7 +105,7 @@
             // butt_move
             // 
             butt_move.Font = new Font("Segoe UI", 14.25F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            butt_move.Location = new Point(541, 353);
+            butt_move.Location = new Point(611, 352);
             butt_move.Name = "butt_move";
             butt_move.Size = new Size(134, 65);
             butt_move.TabIndex = 6;
@@ -116,7 +116,7 @@
             // butt_gomenu
             // 
             butt_gomenu.Font = new Font("Segoe UI", 14.25F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            butt_gomenu.Location = new Point(434, 353);
+            butt_gomenu.Location = new Point(556, 352);
             butt_gomenu.Name = "butt_gomenu";
             butt_gomenu.Size = new Size(118, 65);
             butt_gomenu.TabIndex = 7;
@@ -152,7 +152,7 @@
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             AutoSize = true;
-            ClientSize = new Size(980, 450);
+            ClientSize = new Size(1149, 450);
             Controls.Add(lbl_msgxp);
             Controls.Add(lbl_msgtreatment);
             Controls.Add(butt_gomenu);
