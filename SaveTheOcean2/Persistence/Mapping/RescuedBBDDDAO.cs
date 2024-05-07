@@ -13,7 +13,10 @@ namespace SaveTheOcean2.Persistence.Mapping
         {
             this.connectionString = connectionString;
         }
-
+        /// <summary>
+        /// Afaegix un nou rescat a la base de dades
+        /// </summary>
+        /// <param name="rescued">Objecte RescuedBBDD</param>
         public void AddRescuedBBDD(RescuedBBDD rescued)
         {
             using (NpgsqlConnection connection = new NpgsqlConnection(connectionString))
@@ -32,7 +35,10 @@ namespace SaveTheOcean2.Persistence.Mapping
             }
         }
 
-
+        /// <summary>
+        /// Retorna tots els rescats de la base de dades
+        /// </summary>
+        /// <returns>IEnumerable</returns>
         public IEnumerable<RescuedBBDD> GetAllRescuedsBBDD()
         {
             List<RescuedBBDD> rescueds = new List<RescuedBBDD>();

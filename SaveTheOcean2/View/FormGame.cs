@@ -38,18 +38,28 @@ namespace SaveTheOcean2.View
             // Instanciem un animal a rescata de la super família obtinguda anteriorment
             animal = MethodsUtilities.GetAnimal();
 
+
             // Instanciem un rescat amb la super família obtinguda anteriorment
             rescued = new Rescued(animal);
+
 
             // Instanciem un jugador amb el nom i la experiència a partir del rol escollit i el rol escollit
             player = new Player(playername, role == "Tecnic" ? FORTUFIVE : EIGHTING, role);
 
+
+            // Mostrem la informació del jugador
             lbl_playerInfo.Text = $"{player}";
 
+
+            // Mostrem el missatge de rescat
             lbl_msgRescat.Text = string.Format(Msg112Rescued, playername);
-            lbl_TableRescat.Text = MethodsUtilities.PrintInfoData(rescued);
-            lbl_FitxaRescat.Text = MethodsUtilities.PrintInfoDataSheet(rescued);
             lbl_choose.Text = string.Format(MsgTreatment, rescued.Animal.Name, rescued.Animal.GradeAfectation);
+
+            
+            // Mostrem la informació del rescat
+            dtvw_tablerescued.Rows.Add(rescued.Number, rescued.Date.ToString("dd/MM/yyyy"), rescued.Superfamily, rescued.Animal.GradeAfectation, rescued.Location);
+            dtvw_tablesheetrescued.Rows.Add(rescued.Animal.Name, rescued.Animal.Superfamily, rescued.Animal.Specie, rescued.Animal.WeightAprox.ToString("N2")+" Kg");
+
         }
 
         private void butt_heal_Click(object sender, EventArgs e)
@@ -57,12 +67,11 @@ namespace SaveTheOcean2.View
             newGradeAfectation = animal.CalculateNewGradeAfectation(true);
             lbl_playerInfo.Hide();
             lbl_msgRescat.Hide();
-            lbl_TableRescat.Hide();
-            lbl_FitxaRescat.Hide();
             lbl_choose.Hide();
             butt_heal.Hide();
             butt_move.Hide();
-
+            dtvw_tablerescued.Hide();
+            dtvw_tablesheetrescued.Hide();
             if (newGradeAfectation <= THIRTY)
             {
                 lbl_msgtreatment.Text = string.Format(MsgTreatmentExit, newGradeAfectation, rescued.Animal.Name, rescued.Animal.Specie);
@@ -111,11 +120,11 @@ namespace SaveTheOcean2.View
             newGradeAfectation = animal.CalculateNewGradeAfectation(false);
             lbl_playerInfo.Hide();
             lbl_msgRescat.Hide();
-            lbl_TableRescat.Hide();
-            lbl_FitxaRescat.Hide();
             lbl_choose.Hide();
             butt_heal.Hide();
             butt_move.Hide();
+            dtvw_tablerescued.Hide();
+            dtvw_tablesheetrescued.Hide();
 
             if (newGradeAfectation <= THIRTY)
             {

@@ -13,12 +13,14 @@ namespace SaveTheOcean2
         public XMLHandler(string path) 
         {
             PATH = path;
+            // Prova de carregar el document XML
             xmlDocument = new XmlDocument();
             try {
                 xmlDocument.Load(PATH);
             }
             catch (Exception e)
             {
+                // En cas de que no es pugui carregar el document XML, es crea un nou document XML
                 CreateXMl();
                 try
                 {
@@ -41,6 +43,9 @@ namespace SaveTheOcean2
             }
         }
 
+        /// <summary>
+        /// Crea un arxiu XML amb la estructura necessaria per guardar les puntuacions
+        /// </summary>
         private static void CreateXMl()
         {
             var xmlDocument = new XmlDocument();
@@ -49,6 +54,10 @@ namespace SaveTheOcean2
             xmlDocument.Save(PATH);
         }
 
+        /// <summary>
+        /// Afegeix la puntuació d'un jugador al document XML
+        /// </summary>
+        /// <param name="player">Objecte player</param>
         public void AddScore(Player player)
         {
             var rootNode = xmlDocument.DocumentElement;
@@ -74,51 +83,5 @@ namespace SaveTheOcean2
             
             xmlDocument.Save(PATH);
         }
-
-        /*public void ConvertToXml(List<ComarcaDTO> comarcas)
-        {
-            var xmlDocument = new XmlDocument();
-            var rootNode = xmlDocument.CreateElement("Comarques");
-            xmlDocument.AppendChild(rootNode);
-
-            foreach (var comarca in comarcas)
-            {
-                var comarcaNode = xmlDocument.CreateElement("Comarca");
-                rootNode.AppendChild(comarcaNode);
-
-                var anyNode = xmlDocument.CreateElement("Any");
-                anyNode.InnerText = comarca.Any.ToString();
-                comarcaNode.AppendChild(anyNode);
-
-                var codiNode = xmlDocument.CreateElement("Codi");
-                codiNode.InnerText = comarca.CodiComarca.ToString();
-                comarcaNode.AppendChild(codiNode);
-
-                var nomNode = xmlDocument.CreateElement("Nom");
-                nomNode.InnerText = comarca.NomComarca;
-                comarcaNode.AppendChild(nomNode);
-
-                var poblacioNode = xmlDocument.CreateElement("Poblacio");
-                poblacioNode.InnerText = comarca.Poblacio.ToString();
-                comarcaNode.AppendChild(poblacioNode);
-
-                var domesticNode = xmlDocument.CreateElement("DomesticXarxa");
-                domesticNode.InnerText = comarca.DomesticXarxa.ToString();
-                comarcaNode.AppendChild(domesticNode);
-
-                var activitatsNode = xmlDocument.CreateElement("ActivitatsEconomiques");
-                activitatsNode.InnerText = comarca.ActivitatsEconomiques.ToString();
-                comarcaNode.AppendChild(activitatsNode);
-
-                var totalNode = xmlDocument.CreateElement("Total");
-                totalNode.InnerText = comarca.Total.ToString();
-                comarcaNode.AppendChild(totalNode);
-
-                var consumNode = xmlDocument.CreateElement("ConsumDomesticPerCapita");
-                consumNode.InnerText = comarca.ConsumDomesticPerCapita.ToString();
-                comarcaNode.AppendChild(consumNode);
-            }
-            xmlDocument.Save(PATH);
-        }*/
     }
 }

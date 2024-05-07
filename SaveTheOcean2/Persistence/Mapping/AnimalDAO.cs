@@ -14,6 +14,10 @@ namespace SaveTheOcean2.Persistence.Mapping
             this.connectionString = connectionString;
         }
 
+        /// <summary>
+        /// Afegir un animal a la taula animal del postgresql
+        /// </summary>
+        /// <param name="animal">Objecte animal</param>
         public void AddAnimal(Animal animal)
         {
             using (NpgsqlConnection connection = new NpgsqlConnection(connectionString))
@@ -29,6 +33,10 @@ namespace SaveTheOcean2.Persistence.Mapping
             }
         }
 
+        /// <summary>
+        /// Eliminar un animal de la taula animal del postgresql
+        /// </summary>
+        /// <param name="id">id animal</param>
         public void DeleteAnimal(int id)
         {
             using (NpgsqlConnection connection = new NpgsqlConnection(connectionString))
@@ -41,6 +49,10 @@ namespace SaveTheOcean2.Persistence.Mapping
             }
         }
 
+        /// <summary>
+        /// Retorna tots els animals de la taula animal del postgresql
+        /// </summary>
+        /// <returns>IEnumerable</returns>
         public IEnumerable<Animal> GetAllAnimals()
         {
             List<Animal> animals = new List<Animal>();
@@ -60,6 +72,11 @@ namespace SaveTheOcean2.Persistence.Mapping
             return animals;
         }
 
+        /// <summary>
+        /// Retorna un animal de la taula animal del postgresql
+        /// </summary>
+        /// <param name="id">id animal</param>
+        /// <returns>Animal</returns>
         public Animal GetAnimalById(int id)
         {
             Animal animal = null;
@@ -80,6 +97,10 @@ namespace SaveTheOcean2.Persistence.Mapping
             return animal;
         }
 
+        /// <summary>
+        /// Actualitzar un animal de la taula animal del postgresql
+        /// </summary>
+        /// <param name="animal">Objecte animal</param>
         public void UpdateAnimal(Animal animal)
         {
             using (NpgsqlConnection connection = new NpgsqlConnection(connectionString))

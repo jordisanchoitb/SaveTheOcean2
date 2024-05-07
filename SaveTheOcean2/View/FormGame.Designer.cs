@@ -31,14 +31,25 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FormGame));
             lbl_playerInfo = new Label();
             lbl_msgRescat = new Label();
-            lbl_TableRescat = new Label();
-            lbl_FitxaRescat = new Label();
             lbl_choose = new Label();
             butt_heal = new Button();
             butt_move = new Button();
             butt_gomenu = new Button();
-            lbl_msgtreatment = new Label();
             lbl_msgxp = new Label();
+            dtvw_tablerescued = new DataGridView();
+            idNumber = new DataGridViewTextBoxColumn();
+            Date = new DataGridViewTextBoxColumn();
+            Superfamily = new DataGridViewTextBoxColumn();
+            GradeAfectation = new DataGridViewTextBoxColumn();
+            Location = new DataGridViewTextBoxColumn();
+            dtvw_tablesheetrescued = new DataGridView();
+            NameView = new DataGridViewTextBoxColumn();
+            Superfamily2 = new DataGridViewTextBoxColumn();
+            Specie = new DataGridViewTextBoxColumn();
+            WeightAprox = new DataGridViewTextBoxColumn();
+            lbl_msgtreatment = new Label();
+            ((System.ComponentModel.ISupportInitialize)dtvw_tablerescued).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)dtvw_tablesheetrescued).BeginInit();
             SuspendLayout();
             // 
             // lbl_playerInfo
@@ -61,31 +72,11 @@
             lbl_msgRescat.TabIndex = 1;
             lbl_msgRescat.Text = "msgRescat";
             // 
-            // lbl_TableRescat
-            // 
-            lbl_TableRescat.AutoSize = true;
-            lbl_TableRescat.Font = new Font("Segoe UI Semibold", 12.25F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            lbl_TableRescat.Location = new Point(12, 117);
-            lbl_TableRescat.Name = "lbl_TableRescat";
-            lbl_TableRescat.Size = new Size(125, 23);
-            lbl_TableRescat.TabIndex = 2;
-            lbl_TableRescat.Text = "msgtablerescat";
-            // 
-            // lbl_FitxaRescat
-            // 
-            lbl_FitxaRescat.AutoSize = true;
-            lbl_FitxaRescat.Font = new Font("Segoe UI Semibold", 12.25F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            lbl_FitxaRescat.Location = new Point(579, 117);
-            lbl_FitxaRescat.Name = "lbl_FitxaRescat";
-            lbl_FitxaRescat.Size = new Size(121, 23);
-            lbl_FitxaRescat.TabIndex = 3;
-            lbl_FitxaRescat.Text = "msgfitxarescat";
-            // 
             // lbl_choose
             // 
             lbl_choose.AutoSize = true;
             lbl_choose.Font = new Font("Segoe UI Semibold", 14.25F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            lbl_choose.Location = new Point(260, 276);
+            lbl_choose.Location = new Point(258, 300);
             lbl_choose.Name = "lbl_choose";
             lbl_choose.Size = new Size(108, 25);
             lbl_choose.TabIndex = 4;
@@ -94,7 +85,7 @@
             // butt_heal
             // 
             butt_heal.Font = new Font("Segoe UI", 14.25F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            butt_heal.Location = new Point(411, 352);
+            butt_heal.Location = new Point(411, 361);
             butt_heal.Name = "butt_heal";
             butt_heal.Size = new Size(118, 65);
             butt_heal.TabIndex = 5;
@@ -105,7 +96,7 @@
             // butt_move
             // 
             butt_move.Font = new Font("Segoe UI", 14.25F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            butt_move.Location = new Point(611, 352);
+            butt_move.Location = new Point(611, 361);
             butt_move.Name = "butt_move";
             butt_move.Size = new Size(134, 65);
             butt_move.TabIndex = 6;
@@ -116,7 +107,7 @@
             // butt_gomenu
             // 
             butt_gomenu.Font = new Font("Segoe UI", 14.25F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            butt_gomenu.Location = new Point(556, 352);
+            butt_gomenu.Location = new Point(496, 361);
             butt_gomenu.Name = "butt_gomenu";
             butt_gomenu.Size = new Size(118, 65);
             butt_gomenu.TabIndex = 7;
@@ -125,47 +116,144 @@
             butt_gomenu.Visible = false;
             butt_gomenu.Click += butt_gomenu_Click;
             // 
-            // lbl_msgtreatment
-            // 
-            lbl_msgtreatment.AutoSize = true;
-            lbl_msgtreatment.Font = new Font("Segoe UI Semibold", 14.25F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            lbl_msgtreatment.Location = new Point(12, 140);
-            lbl_msgtreatment.Name = "lbl_msgtreatment";
-            lbl_msgtreatment.Size = new Size(135, 25);
-            lbl_msgtreatment.TabIndex = 8;
-            lbl_msgtreatment.Text = "msgTreatment";
-            lbl_msgtreatment.Visible = false;
-            // 
             // lbl_msgxp
             // 
             lbl_msgxp.AutoSize = true;
             lbl_msgxp.Font = new Font("Segoe UI Semibold", 14.25F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            lbl_msgxp.Location = new Point(277, 210);
+            lbl_msgxp.Location = new Point(230, 245);
             lbl_msgxp.Name = "lbl_msgxp";
             lbl_msgxp.Size = new Size(69, 25);
             lbl_msgxp.TabIndex = 9;
             lbl_msgxp.Text = "msgxp";
             lbl_msgxp.Visible = false;
             // 
+            // dtvw_tablerescued
+            // 
+            dtvw_tablerescued.AllowUserToAddRows = false;
+            dtvw_tablerescued.AllowUserToDeleteRows = false;
+            dtvw_tablerescued.AllowUserToResizeColumns = false;
+            dtvw_tablerescued.AllowUserToResizeRows = false;
+            dtvw_tablerescued.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.AllCells;
+            dtvw_tablerescued.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            dtvw_tablerescued.Columns.AddRange(new DataGridViewColumn[] { idNumber, Date, Superfamily, GradeAfectation, Location });
+            dtvw_tablerescued.Location = new Point(14, 103);
+            dtvw_tablerescued.Name = "dtvw_tablerescued";
+            dtvw_tablerescued.ReadOnly = true;
+            dtvw_tablerescued.RowHeadersVisible = false;
+            dtvw_tablerescued.RowHeadersWidth = 45;
+            dtvw_tablerescued.Size = new Size(517, 194);
+            dtvw_tablerescued.TabIndex = 10;
+            // 
+            // idNumber
+            // 
+            idNumber.HeaderText = "Rescat";
+            idNumber.Name = "idNumber";
+            idNumber.ReadOnly = true;
+            idNumber.Width = 66;
+            // 
+            // Date
+            // 
+            Date.HeaderText = "Data rescat";
+            Date.Name = "Date";
+            Date.ReadOnly = true;
+            Date.Width = 90;
+            // 
+            // Superfamily
+            // 
+            Superfamily.HeaderText = "Superfamília";
+            Superfamily.Name = "Superfamily";
+            Superfamily.ReadOnly = true;
+            Superfamily.Width = 98;
+            // 
+            // GradeAfectation
+            // 
+            GradeAfectation.HeaderText = "GA";
+            GradeAfectation.Name = "GradeAfectation";
+            GradeAfectation.ReadOnly = true;
+            GradeAfectation.Width = 48;
+            // 
+            // Location
+            // 
+            Location.HeaderText = "Localització";
+            Location.Name = "Location";
+            Location.ReadOnly = true;
+            Location.Width = 94;
+            // 
+            // dtvw_tablesheetrescued
+            // 
+            dtvw_tablesheetrescued.AllowUserToAddRows = false;
+            dtvw_tablesheetrescued.AllowUserToDeleteRows = false;
+            dtvw_tablesheetrescued.AllowUserToResizeColumns = false;
+            dtvw_tablesheetrescued.AllowUserToResizeRows = false;
+            dtvw_tablesheetrescued.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.AllCells;
+            dtvw_tablesheetrescued.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            dtvw_tablesheetrescued.Columns.AddRange(new DataGridViewColumn[] { NameView, Superfamily2, Specie, WeightAprox });
+            dtvw_tablesheetrescued.Location = new Point(579, 103);
+            dtvw_tablesheetrescued.Name = "dtvw_tablesheetrescued";
+            dtvw_tablesheetrescued.ReadOnly = true;
+            dtvw_tablesheetrescued.RowHeadersVisible = false;
+            dtvw_tablesheetrescued.Size = new Size(523, 194);
+            dtvw_tablesheetrescued.TabIndex = 11;
+            // 
+            // NameView
+            // 
+            NameView.HeaderText = "Nom";
+            NameView.Name = "NameView";
+            NameView.ReadOnly = true;
+            NameView.Width = 59;
+            // 
+            // Superfamily2
+            // 
+            Superfamily2.HeaderText = "Superfamília";
+            Superfamily2.Name = "Superfamily2";
+            Superfamily2.ReadOnly = true;
+            Superfamily2.Width = 98;
+            // 
+            // Specie
+            // 
+            Specie.HeaderText = "Espècie";
+            Specie.Name = "Specie";
+            Specie.ReadOnly = true;
+            Specie.Width = 71;
+            // 
+            // WeightAprox
+            // 
+            WeightAprox.HeaderText = "Pes aproximat";
+            WeightAprox.Name = "WeightAprox";
+            WeightAprox.ReadOnly = true;
+            WeightAprox.Width = 107;
+            // 
+            // lbl_msgtreatment
+            // 
+            lbl_msgtreatment.Font = new Font("Segoe UI Semibold", 14.25F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            lbl_msgtreatment.Location = new Point(14, 135);
+            lbl_msgtreatment.Name = "lbl_msgtreatment";
+            lbl_msgtreatment.Size = new Size(1088, 96);
+            lbl_msgtreatment.TabIndex = 8;
+            lbl_msgtreatment.Text = "msgTreatment";
+            lbl_msgtreatment.Visible = false;
+            // 
             // FormGame
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             AutoSize = true;
-            ClientSize = new Size(1149, 450);
+            ClientSize = new Size(1127, 450);
             Controls.Add(lbl_msgxp);
             Controls.Add(lbl_msgtreatment);
             Controls.Add(butt_gomenu);
             Controls.Add(butt_move);
             Controls.Add(butt_heal);
             Controls.Add(lbl_choose);
-            Controls.Add(lbl_FitxaRescat);
-            Controls.Add(lbl_TableRescat);
             Controls.Add(lbl_msgRescat);
             Controls.Add(lbl_playerInfo);
+            Controls.Add(dtvw_tablerescued);
+            Controls.Add(dtvw_tablesheetrescued);
             Icon = (Icon)resources.GetObject("$this.Icon");
             Name = "FormGame";
             Text = "FormGame";
+            ((System.ComponentModel.ISupportInitialize)dtvw_tablerescued).EndInit();
+            ((System.ComponentModel.ISupportInitialize)dtvw_tablesheetrescued).EndInit();
             ResumeLayout(false);
             PerformLayout();
         }
@@ -174,13 +262,22 @@
 
         private Label lbl_playerInfo;
         private Label lbl_msgRescat;
-        private Label lbl_TableRescat;
-        private Label lbl_FitxaRescat;
         private Label lbl_choose;
         private Button butt_heal;
         private Button butt_move;
         private Button butt_gomenu;
-        private Label lbl_msgtreatment;
         private Label lbl_msgxp;
+        private DataGridView dtvw_tablerescued;
+        private DataGridView dtvw_tablesheetrescued;
+        private DataGridViewTextBoxColumn idNumber;
+        private DataGridViewTextBoxColumn Date;
+        private DataGridViewTextBoxColumn Superfamily;
+        private DataGridViewTextBoxColumn GradeAfectation;
+        private DataGridViewTextBoxColumn Location;
+        private DataGridViewTextBoxColumn NameView;
+        private DataGridViewTextBoxColumn Superfamily2;
+        private DataGridViewTextBoxColumn Specie;
+        private DataGridViewTextBoxColumn WeightAprox;
+        private Label lbl_msgtreatment;
     }
 }

@@ -8,14 +8,6 @@ namespace SaveTheOcean2
 {
     public static class MethodsUtilities
     {
-        const string MSG_INFOLINE = "+-------------------------------------------------------------+";
-        const string MSG_INFONAME_RES = "|                       RESCAT                                |";
-        const string MSG_INFORES = "| # Rescat | Data rescat | Superfamília   | GA | Localització |";
-        const string MSG_INFORES_STATS = "|  {0,-6}  | {1,-10} | {2,-14} | {3,-2} | {4,-12} |";
-        const string MSG_INFONAME_SHEET = "|                       FITXA                                 |";
-        const string MSG_INFOSHEET = "| # Nom  | Superfamília   | Espècie       | Pes aproximat     |";
-        const string MSG_INFOSHEET_STATS = "| {0,-6} | {1,-14} | {2,-8} | {3,-15:F1}kg |";
-
         /// <summary>
         /// Retorna un booleà indicant si el número usuari està entre min i max (inclosos)
         /// </summary>
@@ -97,39 +89,6 @@ namespace SaveTheOcean2
                 default:
                     return null;
             }
-        }
-
-
-        /// <summary>
-        /// Imprimeix per consola les dades del rescat passat per paràmetre
-        /// </summary>
-        /// <param name="rescued">objecta Rescued</param>
-        public static string PrintInfoData(Rescued rescued)
-        {
-            return $"{MSG_INFOLINE}\n" +
-                $"{MSG_INFONAME_RES}\n" +
-                $"{MSG_INFOLINE}\n" +
-                $"{MSG_INFORES}\n" +
-                $"{MSG_INFOLINE}\n" +
-                $"{string.Format(MSG_INFORES_STATS, rescued.Number, rescued.Date.ToString("dd/MM/yyyy"), rescued.Superfamily, rescued.Animal.GradeAfectation, rescued.Location)}\n" +
-                $"{MSG_INFOLINE}";
-
-        }
-
-
-        /// <summary>
-        /// Imprimeix per consola les dades de la fitxa del rescat passat per paràmetre
-        /// </summary>
-        /// <param name="rescued">objecta Rescued</param>
-        public static string PrintInfoDataSheet(Rescued rescued)
-        {
-            return $"{MSG_INFOLINE}\n" +
-                $"{MSG_INFONAME_SHEET}\n" +
-                $"{MSG_INFOLINE}\n" +
-                $"{MSG_INFOSHEET}\n" +
-                $"{MSG_INFOLINE}\n" +
-                $"{string.Format(MSG_INFOSHEET_STATS, rescued.Animal.Name, rescued.Animal.Superfamily, rescued.Animal.Specie, rescued.Animal.WeightAprox)}\n" +
-                $"{MSG_INFOLINE}";
         }
     }
 }

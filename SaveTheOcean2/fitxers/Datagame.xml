@@ -53,4 +53,28 @@
     <Role>Tecnic</Role>
     <AnimalRescued>True</AnimalRescued>
   </Score>
+  <Score>
+    <Name>Qihang</Name>
+    <Experience>25</Experience>
+    <Role>Tecnic</Role>
+    <AnimalRescued>False</AnimalRescued>
+  </Score>
+  <Score>
+    <Name>Pau</Name>
+    <Experience>130</Experience>
+    <Role>Veterinari</Role>
+    <AnimalRescued>True</AnimalRescued>
+  </Score>
+  <Score>
+    <Name>Jordi</Name>
+    <Experience>95</Experience>
+    <Role>Tecnic</Role>
+    <AnimalRescued>True</AnimalRescued>
+  </Score>
+  <Score>
+    <Name>Killua</Name>
+    <Experience>130</Experience>
+    <Role>Veterinari</Role>
+    <AnimalRescued>True</AnimalRescued>
+  </Score>
 </Scores>
