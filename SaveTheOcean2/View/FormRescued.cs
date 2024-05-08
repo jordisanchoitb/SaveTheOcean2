@@ -49,7 +49,7 @@ namespace SaveTheOcean2
             }
             catch (Exception ex)
             {
-                lbl_error.Text = "Error en connectar-se a la BBDD";
+                lbl_error.Text = "Error en connectar-se a la base de dades";
                 lbl_error.Show();
                 butt_filter.Enabled = false;
                 butt_Clear.Enabled = false;

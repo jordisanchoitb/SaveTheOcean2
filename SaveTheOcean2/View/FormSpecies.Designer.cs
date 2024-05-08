@@ -53,7 +53,7 @@
             butt_modify.Name = "butt_modify";
             butt_modify.Size = new Size(118, 65);
             butt_modify.TabIndex = 6;
-            butt_modify.Text = "Modificar especie";
+            butt_modify.Text = "Modificar espècie";
             butt_modify.UseVisualStyleBackColor = true;
             butt_modify.Click += butt_modify_Click;
             // 
@@ -64,7 +64,7 @@
             butt_add.Name = "butt_add";
             butt_add.Size = new Size(118, 65);
             butt_add.TabIndex = 7;
-            butt_add.Text = "Afegir especie";
+            butt_add.Text = "Afegir espècie";
             butt_add.UseVisualStyleBackColor = true;
             butt_add.Click += butt_add_Click;
             // 
@@ -76,7 +76,7 @@
             lbl_species.Name = "lbl_species";
             lbl_species.Size = new Size(342, 45);
             lbl_species.TabIndex = 8;
-            lbl_species.Text = "Especies que vols fer?";
+            lbl_species.Text = "Espècies que vols fer?";
             // 
             // FormSpecies
             // 

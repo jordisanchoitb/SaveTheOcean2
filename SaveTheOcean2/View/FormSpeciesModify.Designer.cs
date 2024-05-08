@@ -77,7 +77,7 @@
             butt_Modify.Name = "butt_Modify";
             butt_Modify.Size = new Size(138, 72);
             butt_Modify.TabIndex = 23;
-            butt_Modify.Text = "Modificar especie";
+            butt_Modify.Text = "Modificar espècie";
             butt_Modify.UseVisualStyleBackColor = true;
             butt_Modify.Click += butt_Modify_Click;
             // 
@@ -144,7 +144,7 @@
             lbl_specie.Name = "lbl_specie";
             lbl_specie.Size = new Size(75, 23);
             lbl_specie.TabIndex = 16;
-            lbl_specie.Text = "Especie: ";
+            lbl_specie.Text = "Espècie: ";
             // 
             // lbl_Name
             // 
@@ -164,7 +164,7 @@
             lbl_introduce.Name = "lbl_introduce";
             lbl_introduce.Size = new Size(295, 21);
             lbl_introduce.TabIndex = 14;
-            lbl_introduce.Text = "Introdueix las dades de la nova especie";
+            lbl_introduce.Text = "Introdueix las dades de la nova espècie";
             // 
             // lbl_ModifySpecie
             // 
@@ -174,7 +174,7 @@
             lbl_ModifySpecie.Name = "lbl_ModifySpecie";
             lbl_ModifySpecie.Size = new Size(448, 45);
             lbl_ModifySpecie.TabIndex = 13;
-            lbl_ModifySpecie.Text = "Quina especie vols modificar";
+            lbl_ModifySpecie.Text = "Quina espècie vols modificar";
             // 
             // dtvw_animals
             // 
@@ -199,7 +199,7 @@
             lbl_introduceId.Name = "lbl_introduceId";
             lbl_introduceId.Size = new Size(306, 47);
             lbl_introduceId.TabIndex = 25;
-            lbl_introduceId.Text = "Introdueix la id de la especie que vols modificar";
+            lbl_introduceId.Text = "Introdueix la id de la espècie que vols modificar";
             // 
             // lbl_Id
             // 

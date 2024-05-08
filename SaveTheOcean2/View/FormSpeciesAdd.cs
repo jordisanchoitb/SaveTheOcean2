@@ -100,7 +100,7 @@ namespace SaveTheOcean2.View
         {
             if (cmbBox_SuperFamily.SelectedIndex == -1)
             {
-                SuperFamilyProvider.SetError(cmbBox_SuperFamily, "Has de seleccionar una super familia");
+                SuperFamilyProvider.SetError(cmbBox_SuperFamily, "Has de seleccionar una superfamília");
                 e.Cancel = true;
             }
             else

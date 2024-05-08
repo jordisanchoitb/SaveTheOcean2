@@ -71,7 +71,7 @@
             lbl_AddSpecie.Name = "lbl_AddSpecie";
             lbl_AddSpecie.Size = new Size(443, 45);
             lbl_AddSpecie.TabIndex = 2;
-            lbl_AddSpecie.Text = "Vols afegir una nova especie";
+            lbl_AddSpecie.Text = "Vols afegir una nova espècie";
             // 
             // lbl_introduce
             // 
@@ -81,7 +81,7 @@
             lbl_introduce.Name = "lbl_introduce";
             lbl_introduce.Size = new Size(295, 21);
             lbl_introduce.TabIndex = 3;
-            lbl_introduce.Text = "Introdueix las dades de la nova especie";
+            lbl_introduce.Text = "Introdueix las dades de la nova espècie";
             // 
             // lbl_Name
             // 
@@ -101,7 +101,7 @@
             lbl_specie.Name = "lbl_specie";
             lbl_specie.Size = new Size(75, 23);
             lbl_specie.TabIndex = 5;
-            lbl_specie.Text = "Especie: ";
+            lbl_specie.Text = "Espècie: ";
             // 
             // lbl_SuperFamily
             // 
@@ -181,7 +181,7 @@
             butt_Add.Name = "butt_Add";
             butt_Add.Size = new Size(138, 72);
             butt_Add.TabIndex = 12;
-            butt_Add.Text = "Afegir especie";
+            butt_Add.Text = "Afegir espècie";
             butt_Add.UseVisualStyleBackColor = true;
             butt_Add.Click += butt_Add_Click;
             // 

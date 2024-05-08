@@ -20,8 +20,8 @@ namespace SaveTheOcean2.View
         const string MsgTreatment = "{0} té un grau d'afectació (GA) del {1}%. Vols curar-lo o traslladar-lo al centre?";
         const string MsgXpAugment = " La teva experiència ha augmentat en +{0}XP.";
         const string MsgXpDecrease = " La teva experiència s’ha reduït en -{0}XP.";
-        const string MsgTreatmentExit = "El tractament aplicat ha reduït el GA fins al {0}%. Rescat èxit! {1}, de la espècie {2} ha estat reintroduït al medi natural.";
-        const string MsgTreatmentNotExit = "El tractament aplicat ha reduït el GA fins al {0}%. L'exemplar {1}, de la espècie {2} requereix més atenció. Traslladant al CRAM.";
+        const string MsgTreatmentExit = "El tractament aplicat ha reduït el GA fins al {0}%. Rescat èxit! {1}, de l'espècie {2} ha estat reintroduït al medi natural.";
+        const string MsgTreatmentNotExit = "El tractament aplicat ha reduït el GA fins al {0}%. L'exemplar {1}, de l'espècie {2} requereix més atenció. Traslladant al CRAM.";
         const string PathXML = @"..\..\..\fitxers\Datagame.xml";
         const int FORTUFIVE = 45, EIGHTING = 80, THIRTY = 30, FIFTY = 50, TWENTY = 20;
 
@@ -109,7 +109,7 @@ namespace SaveTheOcean2.View
             }
             catch (Exception ex)
             {
-                MessageBox.Show("Error al guardar el rescat a la base de dades", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show("Error en guardar el rescat a la base de dades", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
 
             butt_gomenu.Show();

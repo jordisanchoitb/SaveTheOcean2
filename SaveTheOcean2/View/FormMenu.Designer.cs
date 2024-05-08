@@ -39,17 +39,17 @@
             // lblTitle
             // 
             lblTitle.Font = new Font("Segoe UI", 24F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            lblTitle.Location = new Point(268, 22);
+            lblTitle.Location = new Point(258, 9);
             lblTitle.Name = "lblTitle";
-            lblTitle.Size = new Size(247, 118);
+            lblTitle.Size = new Size(274, 150);
             lblTitle.TabIndex = 0;
-            lblTitle.Text = "Benvingut a Save the ocean";
+            lblTitle.Text = "Benvingut a Save The Ocean 2";
             lblTitle.TextAlign = ContentAlignment.MiddleCenter;
             // 
             // butt_start
             // 
             butt_start.Font = new Font("Segoe UI", 14.25F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            butt_start.Location = new Point(164, 175);
+            butt_start.Location = new Point(202, 175);
             butt_start.Name = "butt_start";
             butt_start.Size = new Size(118, 55);
             butt_start.TabIndex = 1;
@@ -60,7 +60,7 @@
             // butt_close
             // 
             butt_close.Font = new Font("Segoe UI", 14.25F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            butt_close.Location = new Point(164, 303);
+            butt_close.Location = new Point(202, 303);
             butt_close.Name = "butt_close";
             butt_close.Size = new Size(118, 55);
             butt_close.TabIndex = 2;
@@ -71,7 +71,7 @@
             // butt_rescued
             // 
             butt_rescued.Font = new Font("Segoe UI", 14.25F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            butt_rescued.Location = new Point(495, 303);
+            butt_rescued.Location = new Point(469, 303);
             butt_rescued.Name = "butt_rescued";
             butt_rescued.Size = new Size(118, 55);
             butt_rescued.TabIndex = 3;
@@ -82,11 +82,11 @@
             // butt_species
             // 
             butt_species.Font = new Font("Segoe UI", 14.25F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            butt_species.Location = new Point(495, 175);
+            butt_species.Location = new Point(469, 175);
             butt_species.Name = "butt_species";
             butt_species.Size = new Size(118, 55);
             butt_species.TabIndex = 4;
-            butt_species.Text = "Especies";
+            butt_species.Text = "Espècies";
             butt_species.UseVisualStyleBackColor = true;
             butt_species.Click += butt_species_Click;
             // 
@@ -102,7 +102,7 @@
             Controls.Add(lblTitle);
             Icon = (Icon)resources.GetObject("$this.Icon");
             Name = "FormMenu";
-            Text = "Save the ocean!! 2";
+            Text = "Save the ocean 2";
             ResumeLayout(false);
         }
 
