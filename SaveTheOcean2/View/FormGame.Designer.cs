@@ -76,7 +76,7 @@
             // 
             lbl_choose.AutoSize = true;
             lbl_choose.Font = new Font("Segoe UI Semibold", 14.25F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            lbl_choose.Location = new Point(258, 300);
+            lbl_choose.Location = new Point(256, 279);
             lbl_choose.Name = "lbl_choose";
             lbl_choose.Size = new Size(108, 25);
             lbl_choose.TabIndex = 4;
@@ -85,7 +85,7 @@
             // butt_heal
             // 
             butt_heal.Font = new Font("Segoe UI", 14.25F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            butt_heal.Location = new Point(411, 361);
+            butt_heal.Location = new Point(402, 324);
             butt_heal.Name = "butt_heal";
             butt_heal.Size = new Size(118, 65);
             butt_heal.TabIndex = 5;
@@ -96,7 +96,7 @@
             // butt_move
             // 
             butt_move.Font = new Font("Segoe UI", 14.25F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            butt_move.Location = new Point(611, 361);
+            butt_move.Location = new Point(602, 324);
             butt_move.Name = "butt_move";
             butt_move.Size = new Size(134, 65);
             butt_move.TabIndex = 6;
@@ -107,7 +107,7 @@
             // butt_gomenu
             // 
             butt_gomenu.Font = new Font("Segoe UI", 14.25F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            butt_gomenu.Location = new Point(496, 361);
+            butt_gomenu.Location = new Point(487, 324);
             butt_gomenu.Name = "butt_gomenu";
             butt_gomenu.Size = new Size(118, 65);
             butt_gomenu.TabIndex = 7;
@@ -120,7 +120,7 @@
             // 
             lbl_msgxp.AutoSize = true;
             lbl_msgxp.Font = new Font("Segoe UI Semibold", 14.25F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            lbl_msgxp.Location = new Point(230, 245);
+            lbl_msgxp.Location = new Point(256, 221);
             lbl_msgxp.Name = "lbl_msgxp";
             lbl_msgxp.Size = new Size(69, 25);
             lbl_msgxp.TabIndex = 9;
@@ -133,7 +133,7 @@
             dtvw_tablerescued.AllowUserToDeleteRows = false;
             dtvw_tablerescued.AllowUserToResizeColumns = false;
             dtvw_tablerescued.AllowUserToResizeRows = false;
-            dtvw_tablerescued.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.AllCells;
+            dtvw_tablerescued.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
             dtvw_tablerescued.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             dtvw_tablerescued.Columns.AddRange(new DataGridViewColumn[] { idNumber, Date, Superfamily, GradeAfectation, Location });
             dtvw_tablerescued.Location = new Point(14, 103);
@@ -141,7 +141,7 @@
             dtvw_tablerescued.ReadOnly = true;
             dtvw_tablerescued.RowHeadersVisible = false;
             dtvw_tablerescued.RowHeadersWidth = 45;
-            dtvw_tablerescued.Size = new Size(517, 194);
+            dtvw_tablerescued.Size = new Size(517, 88);
             dtvw_tablerescued.TabIndex = 10;
             // 
             // idNumber
@@ -149,35 +149,30 @@
             idNumber.HeaderText = "Rescat";
             idNumber.Name = "idNumber";
             idNumber.ReadOnly = true;
-            idNumber.Width = 66;
             // 
             // Date
             // 
             Date.HeaderText = "Data rescat";
             Date.Name = "Date";
             Date.ReadOnly = true;
-            Date.Width = 90;
             // 
             // Superfamily
             // 
             Superfamily.HeaderText = "Superfamília";
             Superfamily.Name = "Superfamily";
             Superfamily.ReadOnly = true;
-            Superfamily.Width = 98;
             // 
             // GradeAfectation
             // 
             GradeAfectation.HeaderText = "GA";
             GradeAfectation.Name = "GradeAfectation";
             GradeAfectation.ReadOnly = true;
-            GradeAfectation.Width = 48;
             // 
             // Location
             // 
             Location.HeaderText = "Localització";
             Location.Name = "Location";
             Location.ReadOnly = true;
-            Location.Width = 94;
             // 
             // dtvw_tablesheetrescued
             // 
@@ -185,14 +180,14 @@
             dtvw_tablesheetrescued.AllowUserToDeleteRows = false;
             dtvw_tablesheetrescued.AllowUserToResizeColumns = false;
             dtvw_tablesheetrescued.AllowUserToResizeRows = false;
-            dtvw_tablesheetrescued.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.AllCells;
+            dtvw_tablesheetrescued.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
             dtvw_tablesheetrescued.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             dtvw_tablesheetrescued.Columns.AddRange(new DataGridViewColumn[] { NameView, Superfamily2, Specie, WeightAprox });
             dtvw_tablesheetrescued.Location = new Point(579, 103);
             dtvw_tablesheetrescued.Name = "dtvw_tablesheetrescued";
             dtvw_tablesheetrescued.ReadOnly = true;
             dtvw_tablesheetrescued.RowHeadersVisible = false;
-            dtvw_tablesheetrescued.Size = new Size(523, 194);
+            dtvw_tablesheetrescued.Size = new Size(523, 88);
             dtvw_tablesheetrescued.TabIndex = 11;
             // 
             // NameView
@@ -200,33 +195,29 @@
             NameView.HeaderText = "Nom";
             NameView.Name = "NameView";
             NameView.ReadOnly = true;
-            NameView.Width = 59;
             // 
             // Superfamily2
             // 
             Superfamily2.HeaderText = "Superfamília";
             Superfamily2.Name = "Superfamily2";
             Superfamily2.ReadOnly = true;
-            Superfamily2.Width = 98;
             // 
             // Specie
             // 
             Specie.HeaderText = "Espècie";
             Specie.Name = "Specie";
             Specie.ReadOnly = true;
-            Specie.Width = 71;
             // 
             // WeightAprox
             // 
             WeightAprox.HeaderText = "Pes aproximat";
             WeightAprox.Name = "WeightAprox";
             WeightAprox.ReadOnly = true;
-            WeightAprox.Width = 107;
             // 
             // lbl_msgtreatment
             // 
             lbl_msgtreatment.Font = new Font("Segoe UI Semibold", 14.25F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            lbl_msgtreatment.Location = new Point(14, 135);
+            lbl_msgtreatment.Location = new Point(14, 125);
             lbl_msgtreatment.Name = "lbl_msgtreatment";
             lbl_msgtreatment.Size = new Size(1088, 96);
             lbl_msgtreatment.TabIndex = 8;
@@ -238,7 +229,7 @@
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             AutoSize = true;
-            ClientSize = new Size(1127, 450);
+            ClientSize = new Size(1127, 402);
             Controls.Add(lbl_msgxp);
             Controls.Add(lbl_msgtreatment);
             Controls.Add(butt_gomenu);

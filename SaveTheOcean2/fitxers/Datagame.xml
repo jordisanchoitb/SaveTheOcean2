@@ -77,4 +77,16 @@
     <Role>Veterinari</Role>
     <AnimalRescued>True</AnimalRescued>
   </Score>
+  <Score>
+    <Name>Bea</Name>
+    <Experience>130</Experience>
+    <Role>Veterinari</Role>
+    <AnimalRescued>True</AnimalRescued>
+  </Score>
+  <Score>
+    <Name>Pere</Name>
+    <Experience>95</Experience>
+    <Role>Tecnic</Role>
+    <AnimalRescued>True</AnimalRescued>
+  </Score>
 </Scores>
